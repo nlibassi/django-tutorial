@@ -1,7 +1,11 @@
+#polls/urls.py
+
 from django.conf.urls import url
 
 from . import views
 
+# app_name sets namespace for app
+app_name = 'polls'
 urlpatterns = [
     # ex: /polls/
     url(r'^$', views.index, name='index'),
