@@ -1,3 +1,5 @@
+#mysite/settings.py
+
 """
 Django settings for mysite project.
 
@@ -31,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# could not run initial migrate with 'TR', 'UTC+3' doesn't work either
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
