@@ -15,8 +15,10 @@ class Question(models.Model):
         return self.question_text
 
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-
+        # the line below works but using tutorials recommended code
+        #return self.pub_date >= timezone.now() - datetime.timedelta(days=1) and self.pub_date < timezone.now()
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
